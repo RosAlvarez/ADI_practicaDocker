@@ -1,7 +1,10 @@
 FROM debian
 
-## Instalación de paquetes y dependencias
+ARG AUTH_URI
+ARG ADMIN
+ARG DB_PATH
 
+## Instalación de paquetes y dependencias
 RUN apt-get update && \
     apt-get install -y \
     python3 \
@@ -17,21 +20,29 @@ RUN mkdir -p api_requirements
 COPY assets/requirements.txt api_requirements/requirements.txt
 RUN pip install api_requirements/requirements.txt
 
-## Implementación de la API
+
+## Copiar Implementación de la API
 RUN mkdir -p restdir
 ADD src restdir
 
-## Base de datos
-RUN mkdir -p db
-COPY assets/db/data.db db/data.db
+## Copiar Base de datos
+RUN mkdir -p DB_PATH
+COPY assets/db/data.db DB_PATH/data.db
 
-## Script de lanzamiento
+## Copiar Script de lanzamiento
 RUN mkdir -p restdir_script
 COPY script/server_script.py restdir_script/server_script.py
 
 COPY setup.py setup.py
 
-ENTRYPOINT [ "entrypoint.sh" , "admin"]
+## Lanzamiento entrypoint del docker
+
+# ENV var_uri=${AUTH_URI}
+# ENV var_admin=${ADMIN}
+# ENV var_dbpath=${DB_PATH}
+# ENTRYPOINT [ "entrypoint.sh", var_uri, var_admin, var_dbpath ]
+
+ENTRYPOINT [ "entrypoint.sh" ]
 
 
 

@@ -1,3 +1,7 @@
-# docker volume create directory_db
+#!/bin/bash
 
-# docker run --name directoryApi -v directory_db:/db debian-directoryApi
+docker volume create dirdb
+
+docker run --name directoryApi -v dirdb:$1 debian-directoryApi
+
+# ./run.sh db/path
