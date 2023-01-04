@@ -1,9 +1,11 @@
+#!/bin/bash
 service ssh start
 
-AUTH_URI = $AUTH_URI
-ADMIN = $ADMIN
-DB_PATH = $DB_PATH
+mkdir -p $3
+mv /data.db $3/data.db
 
 python3 setup.py install
-python3 restdir_script/server_script.py AUTH_URI -a ADMIN -d DB_PATH &
+python3 restdir_script/server_script.py $1 -a $2 -d $3 >/dev/null 2>&1 &
 
+
+exec /bin/bash
