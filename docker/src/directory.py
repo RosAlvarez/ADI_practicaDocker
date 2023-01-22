@@ -124,6 +124,7 @@ class Directory:
         return True
 
     def _checkDirectory(self, uuid):
+        print(self.BD_PATH)
         self.bd_con = sqlite3.connect(self.BD_PATH)
         cur = self.bd_con.cursor()
         if uuid != "0":
@@ -619,7 +620,6 @@ class Directory:
 
         tuples_raw = self._get_dirFiles(id_dir)
         tuples_list = json.loads(tuples_raw)
-        print(tuples_list)
         for file_tuple in tuples_list:
             if name == file_tuple[0]:
                 raise DirectoyException(
@@ -627,7 +627,6 @@ class Directory:
                 )
 
         tuples_list.append(tuple((name, url)))
-        print(tuples_list)
 
         childs = self._get_dirChilds(id_dir)
         childs_list = json.loads(childs)

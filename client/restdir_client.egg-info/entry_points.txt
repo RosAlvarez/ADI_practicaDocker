@@ -1,0 +1,3 @@
+[console_scripts]
+restdir_client = client_script.server:main
+
