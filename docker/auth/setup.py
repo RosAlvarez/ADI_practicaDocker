@@ -5,9 +5,9 @@
 from setuptools import setup
 
 setup(
-    name='restauth',
+    name='restfs_auth',
     version='0.1',
     author= 'Rosa Álvarez, Jose Miguel Moreno',
     description=__doc__,
-    packages=['restauth'],
+    packages=['restfs_auth'],
 )

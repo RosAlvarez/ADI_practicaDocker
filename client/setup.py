@@ -5,11 +5,11 @@
 from setuptools import setup
 
 setup(
-    name='restdir_client',
+    name='src',
     version='0.1',
     author= 'Rosa Álvarez, Jose Miguel Moreno',
     description=__doc__,
-    packages=['src', 'scripts'],
+    packages=['src'],
     entry_points={
         'console_scripts': [
             'restdir_client=client_script.server:main',

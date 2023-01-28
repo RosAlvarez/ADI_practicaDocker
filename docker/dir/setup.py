@@ -5,14 +5,9 @@
 from setuptools import setup
 
 setup(
-    name='restdir',
+    name='restfs_dir',
     version='0.1',
     author= 'Rosa Álvarez, Jose Miguel Moreno',
     description=__doc__,
-    packages=['restdir', 'restdir_script'],
-    entry_points={
-        'console_scripts': [
-            'restdir_server=restdir_script.server:main',
-        ]
-    }
+    packages=['restfs_dir'],
 )

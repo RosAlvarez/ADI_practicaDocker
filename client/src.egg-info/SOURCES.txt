@@ -1,0 +1,10 @@
+setup.py
+src/__init__.py
+src/auth_client.py
+src/client_script.py
+src/dir_client.py
+src.egg-info/PKG-INFO
+src.egg-info/SOURCES.txt
+src.egg-info/dependency_links.txt
+src.egg-info/entry_points.txt
+src.egg-info/top_level.txt

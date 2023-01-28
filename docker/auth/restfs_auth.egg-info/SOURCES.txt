@@ -1,0 +1,8 @@
+setup.py
+restfs_auth/__init__.py
+restfs_auth/server.py
+restfs_auth/service.py
+restfs_auth.egg-info/PKG-INFO
+restfs_auth.egg-info/SOURCES.txt
+restfs_auth.egg-info/dependency_links.txt
+restfs_auth.egg-info/top_level.txt

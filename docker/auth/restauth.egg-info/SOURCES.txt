@@ -1,0 +1,8 @@
+setup.py
+auth_src/__init__.py
+auth_src/server.py
+auth_src/service.py
+restauth.egg-info/PKG-INFO
+restauth.egg-info/SOURCES.txt
+restauth.egg-info/dependency_links.txt
+restauth.egg-info/top_level.txt
