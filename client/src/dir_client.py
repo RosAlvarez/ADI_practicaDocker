@@ -2,7 +2,7 @@
     Interfaces para el acceso al servicio de directorio
 """
 import requests
-from src.auth import AuthService
+from auth_client import AuthService
 HEADERS = {"content-type": "application/json"}
 ADMIN_HEADER = {"admin-token": ""}
 USER_HEADER = {"user-token": ""}

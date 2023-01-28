@@ -5,14 +5,15 @@
 '''
 
 
-from src.client import DirectoryService
+from src.dir_client import DirectoryService
 
-URI = "http://172.17.0.2:3302"
+URI_DIR = "http://172.17.0.2:3302"
+URI_AUTH = ""
 
 def main():
     '''Entry point'''
 
-    directory=DirectoryService(URI, "uri_auth").get_root("admin")
+    directory=DirectoryService(URI_DIR, URI_AUTH).get_root("admin")
     response=directory.new_directory("dirA")
     print(response)
     print(directory.self_info())

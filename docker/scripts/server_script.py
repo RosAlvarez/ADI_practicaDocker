@@ -10,8 +10,8 @@ import os
 from flask import Flask
 from restdir.directory import Directory
 from restdir.server import server
-from restdir.auth import AuthService
-
+from restdir.auth_client import AuthService
+from restfs_common.errors import Unauthorized
 
 def main():
     if len(sys.argv) < 1:
@@ -32,11 +32,11 @@ def main():
 
     args = parser.parse_args()
 
-    auth_serv=AuthService(args.pos_arg)
+    AUTH=AuthService(args.pos_arg)
     try:
-        auth_serv.administrator_login(args.admin) #si no es admin salta error
-    except Exception:
-        print("El token de admin es erroneo")
+        AUTH.administrator_login(args.admin) #si no es admin salta error
+    except Unauthorized as e:
+        print(e.__str__)
         sys.exit(1)
 
     app = Flask("restdir")
