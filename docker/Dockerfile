@@ -14,23 +14,23 @@ RUN apt-get update && \
     sudo && \
     apt-get clean
 
-RUN mkdir -p api_requirements
-COPY assets/requirements.txt api_requirements/requirements.txt
-RUN pip install -r api_requirements/requirements.txt
+RUN mkdir -p directory_api/api_requirements
+COPY assets/requirements.txt directory_api/api_requirements/requirements.txt
+RUN pip install -r directory_api/api_requirements/requirements.txt
 
 
 ## Copiar Implementación de la API
-RUN mkdir -p restdir
-ADD src restdir
+RUN mkdir -p directory_api/restdir
+ADD src directory_api/restdir
 
 ## Copiar Base de datos
-COPY assets/db/data.db /data.db 
+COPY assets/db/data.db data.db 
 
 ## Copiar Script de lanzamiento
-RUN mkdir -p restdir_script
-ADD script restdir_script
+RUN mkdir -p directory_api/restdir_script
+ADD scripts directory_api/restdir_script
 
-COPY setup.py setup.py
+COPY setup.py directory_api/setup.py
 
 ## Lanzamiento entrypoint del docker
 

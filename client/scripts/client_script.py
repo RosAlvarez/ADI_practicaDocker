@@ -5,9 +5,9 @@
 '''
 
 
-from restdir.client import DirectoryService
+from src.client import DirectoryService
 
-URI = "http://172.17.0.2:3002"
+URI = "http://172.17.0.2:3302"
 
 def main():
     '''Entry point'''
