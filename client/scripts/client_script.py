@@ -7,7 +7,7 @@
 
 from src.client import DirectoryService
 
-URI = "http://172.17.0.2:3302"
+URI = "http://127.0.0.1:3002"
 
 def main():
     '''Entry point'''
